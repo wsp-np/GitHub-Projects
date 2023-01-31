@@ -19,4 +19,3 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         x = coh[0] - coh[1]
     
 print(x)
-KKKKKKKKKKKKK
