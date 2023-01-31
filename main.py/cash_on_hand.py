@@ -8,7 +8,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     next(reader)
 
     day = []
-    coh =[]
+    coh = []
 
     for row in reader:
         day.append(row[0])
@@ -19,3 +19,4 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         x = coh[0] - coh[1]
     
 print(x)
+lk23rhil34hio3hiofhfeiohf
