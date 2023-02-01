@@ -24,9 +24,9 @@ def overhead():
     for highest in value:
         high.append(max(value))
         break
-
+# assign 
     idx = high.index(max(value))
-
+#return the highest overhead in USD, rounded to 1 decimal place using round() and its category in capital letters using .upper() 
     return f"[HIGHEST OVERHEADS] {(category[idx]).upper()}: USD {round(high[0],1)}%"
-
+#execute overhead() function using print function
 print(overhead())
