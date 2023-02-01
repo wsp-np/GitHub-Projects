@@ -16,22 +16,35 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         listofaccumulatedcashonhand.append(int(row[1]))
         listofdays.append(int(row[0]))
  
-# create a function to calculate 
+# create a function to calculate the difference for cash on hands 
 def cashonhand(): 
     """
-    Calculate the difference in cash on hand. This function does not require any parameters. 
+    Function calculates the difference in cash on hand and returns cash deficit if the current day has a lower cash on hand than the previous day.
+    This function does not require any parameters. 
     """
-    day0 =listofaccumulatedcashonhand[0] # create a variable to check for the list of accumulated cash on hand 
+    # create a variable to store the index of the first value in the extracted list
+    day0 =listofaccumulatedcashonhand[0] 
+    # set deficit to false 
     deficit = False 
+    # create empty list to append output datas
     deficitdays = [] 
-    for i in range(len(listofaccumulatedcashonhand)-1): # loop through length of accumulated cash on hand to determine if there is a differenc in profit deficit
+    # loop through the function to calculate daily cash on hand
+    # use i to indicate the index position of the values in the list 
+    for i in range(len(listofaccumulatedcashonhand)-1): 
         difference = listofaccumulatedcashonhand[i+1] - day0 
-        if difference < 0: # check if there is a difference in the profit deficit 
-            deficitdays.append(f"[CASH DEFICIT] DAY: {listofdays[i+1]}, AMOUNT USD{round(difference,1)}\n"
+        # check if there is a difference in cash on hand 
+        if difference < 0: 
+            # evaluate if there is deficits
+            deficitdays.append(f"[CASH DEFICIT] DAY: {listofdays[i+1]}, AMOUNT USD{round(difference,1)})" 
+            # set deficit to true for loop to stop looping 
             deficit = True 
         day0 = listofaccumulatedcashonhand[i+1]
-    if deficit == False: # 
-        deficitdays.append(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY. \n")
-    return deficitdays # return the number of deficit days 
+    # evaluate if there is no deficits
+    if deficit == False: 
+        deficitdays.append(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY.")
+    # return the days that has cash deficit 
+    return deficitdays 
+# print the days with cash deficit in the cash on hand list
 for i in cashonhand(): 
-    print(i.replace("-","") # print the function, replace the negative sign and execute the file 
+    # print the function and replace the negative sign in cash deficit amount by replacing it with a blank to execute it
+    print(i.replace("-","") 
