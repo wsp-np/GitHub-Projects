@@ -10,8 +10,11 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     next(reader)
     
     # append accumulated cash on hand and days as a list back to each empty list 
-    listofaccumulatedcashonhand.append(int(row[1]))
-    listofdays.append(int(row[0]))
+    listofaccumulatedcashonhand =[]
+    listofdays = []
+    for row in header:
+        listofaccumulatedcashonhand.append(int(row[1]))
+        listofdays.append(int(row[0]))
  
 # create a function to calculate 
 def cashonhand(): 
