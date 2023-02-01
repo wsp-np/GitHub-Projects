@@ -1,3 +1,4 @@
+#import the 3 functions created in python file
 import cash_on_hand, overheads, profit_loss
 
 #create a function to execute 3 imported functions done
