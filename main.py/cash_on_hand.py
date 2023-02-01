@@ -12,6 +12,8 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     # append accumulated cash on hand and days as a list back to each empty list 
     listofaccumulatedcashonhand =[]
     listofdays = []
+    
+    # convert string to integer using int()
     for row in reader:
         listofaccumulatedcashonhand.append(int(row[1]))
         listofdays.append(int(row[0]))
