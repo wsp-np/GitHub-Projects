@@ -1,22 +1,28 @@
 from pathlib import Path
 import csv 
 
+# create a file to csv file, use / to link another file
 fp= Path.cwd()/"csv_reports"/"overheads-day-90.csv"
 
+# read the csv file to append category and value from the csv. 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
 
+    # create 2 empty lists to store categories and values from the csv file
     category = []
     value = []
 
+    # append category and value as a list back to each empty list 
     for x in reader:
+        # use [0] and [1] to index and extract categories and value 
         category.append(x[0])
         value.append(float(x[1]))
-    
+
+# create a function to find the highest overhead category and its value. 
 def overhead():
     """
-    This finds the highest overhead category and its value when executed. 
+    This function finds the highest overhead category and its value when executed. 
     This function does not need parameter.
     """
 # create an empty list to store the highest overhead value
