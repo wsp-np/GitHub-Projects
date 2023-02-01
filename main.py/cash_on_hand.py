@@ -18,10 +18,10 @@ def cashonhand():
     """
     Calculate the difference in cash on hand. This function does not require any parameters. 
     """
-    day0 =listofaccumulatedcashonhand[0] # check for the accumulated cash on hand 
+    day0 =listofaccumulatedcashonhand[0] # c 
     deficit = False 
     deficitdays = []
-    for i in range(len(listofaccumulatedcashonhand)-1): # create a loop, 
+    for i in range(len(listofaccumulatedcashonhand)-1): # loop through length of accumulated cash on hand to determine if there is a difference if there is profit deficit
         difference = listofaccumulatedcashonhand[i+1] - day0
         if difference < 0:
             deficitdays.append(f"[CASH DEFICIT] DAY: {listofdays[i+1]}, AMOUNT USD{round(difference,1)}\n"
