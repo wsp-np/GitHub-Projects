@@ -1,0 +1,25 @@
+import cash_on_hand, overheads, profit_loss
+
+#create a function to execute 3 imported functions done
+def main(): 
+    """ 
+    - This function coordinates and exceutes the 3 functions
+    - No parameters are required
+    """ 
+    cash_on_hand.cashonhand
+    overheads.overhead
+    profit_loss.profitandloss
+main()
+
+#open text file and name it text_file
+text_file = open("Summary_report.txt", "w")
+
+# assign content1, content2, and content3 to each of the 3 functions 
+# use "\n" to form a new line and 
+# .join() to combine the list contents into a sentence
+content1 = "\n".join(cash_on_hand.cashonhand()) 
+content2 = "\n".join(profit_loss.profitandloss())
+content3 = overheads.overhead() #overhead does not need a new line
+
+#write the 3 created content into the text file
+text_file.write(f"{content1}, {content2}, {content3}")
