@@ -24,29 +24,32 @@ def profitandloss():
     Function calculates the difference in net profits and returns profit deficit if the current day has a lower profit than the previous day.
     This function does not require any parameters.
     """
-    # create a variable to store the index of the first value in the extracted list
-    day0 = listofaccumulatedprofits[0]
+    # create a variable to store the first index in the extracted list
+    first_index = listofaccumulatedprofits[0]
     
     # set deficit to False
     deficit = False
     
-    # create an empty list to append output datas
+    # create an empty list to append output data
     deficitdays = []
     
-    # use for loop to calculate daily profits
+    # use for loop to loop through and calculate the daily profits
     # use i to indicate the index position of the values in the list
     for i in range(len(listofaccumulatedprofits)):
-        difference = listofaccumulatedprofits[i] - day0
+        # find the difference in profits between the current and previous day
+        difference = listofaccumulatedprofits[i] - first_index
         # evaluate if there is a difference in profits
         if difference < 0:
-            # evaluate if there is deficit 
+            # state that there is profit deficit when the difference in profits calculated is negative
             deficitdays.append(f"[PROFIT DEFICIT] DAY: {listofdays[i]}, AMOUNT: USD{round(difference,1)}")
             # set deficit to True for loop to stop looping
             deficit = True
-        day0 = listofaccumulatedprofits[i]
+        # update the previous day variable after looping
+        first_index = listofaccumulatedprofits[i]
         
     # evaluate if there is no deficit
     if deficit == False:
+        # state that there is profit surplus when there is no decrease in profits throughout
         deficitdays.append(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY.")
     # return the days that has profit deficit
     return deficitdays
