@@ -2,7 +2,7 @@ from pathlib import Path
 import csv 
 
 # create a file to csv file, use / to link another file
-fp= Path.cwd()/"csv_reports"/"overheads-day-90.csv"
+fp= Path.cwd()/"csv_reports"/"overheads-day-50.csv"
 
 # read the csv file to append category and value from the csv. 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
