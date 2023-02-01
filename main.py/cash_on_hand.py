@@ -28,6 +28,7 @@ def cashonhand():
     deficit = False 
     # create empty list to append output datas
     deficitdays = [] 
+    
     # loop through the function to calculate daily cash on hand
     # use i to indicate the index position of the values in the list 
     for i in range(len(listofaccumulatedcashonhand)-1): 
@@ -39,11 +40,14 @@ def cashonhand():
             # set deficit to true for loop to stop looping 
             deficit = True 
         day0 = listofaccumulatedcashonhand[i+1]
+                               
     # evaluate if there is no deficits
     if deficit == False: 
         deficitdays.append(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY.")
+                               
     # return the days that has cash deficit 
     return deficitdays 
+                               
 # print the days with cash deficit in the cash on hand list
 for i in cashonhand(): 
     # print the function and replace the negative sign in cash deficit amount by replacing it with a blank to execute it
