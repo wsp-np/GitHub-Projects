@@ -19,14 +19,18 @@ def overhead():
     This finds the highest overhead category and its value when executed. 
     This function does not need parameter.
     """
-
+# create an empty list to store the highest overhead value
     high = []
+# for-loop that iterates over overhead value
     for highest in value:
+# append the highest overhead value using max() and .append()
         high.append(max(value))
+# break and stop the for-loop from iterating using break function
         break
-# assign 
+# use .index() to identify the index position of the highest overhead value
+# create a variable and assign it to the category of the highest overhead value 
     idx = high.index(max(value))
-#return the highest overhead in USD, rounded to 1 decimal place using round() and its category in capital letters using .upper() 
+# return the highest overhead in USD, rounded to 1 decimal place using round() and its category in capital letters using .upper() 
     return f"[HIGHEST OVERHEADS] {(category[idx]).upper()}: USD {round(high[0],1)}%"
-#execute overhead() function using print function
+# execute overhead() function using print function
 print(overhead())
