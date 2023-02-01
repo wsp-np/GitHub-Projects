@@ -15,6 +15,9 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
  
 # create a function to calculate 
 def cashonhand(): 
+    """
+    Calculate the difference in cash on hand. This function does not require any parameters. 
+    """
     day0 =listofaccumulatedcashonhand[0] # check for the accumulated cash on hand 
     deficit = False 
     deficitdays = []
