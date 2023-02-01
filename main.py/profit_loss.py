@@ -43,7 +43,7 @@ def profitandloss():
     # evaluate if there is no deficit
     if deficit == False:
         deficitdays.append(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY.")
-        # return the days that has profit deficit
+    # return the days that has profit deficit
     return deficitdays
 # print the days with profit deficit in the profitandloss list
 for i in profitandloss():
