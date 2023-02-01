@@ -23,7 +23,7 @@ def overhead():
     high = []
 # for-loop that iterates over overhead value
     for highest in value:
-# append the highest overhead value using max() and .append()
+# append the highest overhead value using max() and .append() to the empty list
         high.append(max(value))
 # break and stop the for-loop from iterating using break function
         break
