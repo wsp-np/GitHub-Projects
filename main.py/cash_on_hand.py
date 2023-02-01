@@ -12,7 +12,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     # append accumulated cash on hand and days as a list back to each empty list 
     listofaccumulatedcashonhand =[]
     listofdays = []
-    for row in header:
+    for row in reader:
         listofaccumulatedcashonhand.append(int(row[1]))
         listofdays.append(int(row[0]))
  
@@ -36,7 +36,7 @@ def cashonhand():
         # check if there is a difference in cash on hand 
         if difference < 0: 
             # evaluate if there is deficits
-            deficitdays.append(f"[CASH DEFICIT] DAY: {listofdays[i+1]}, AMOUNT USD{round(difference,1)})" 
+            deficitdays.append(f"[CASH DEFICIT] DAY: {listofdays[i+1]}, AMOUNT USD{round(difference,1)})")
             # set deficit to true for loop to stop looping 
             deficit = True 
         day0 = listofaccumulatedcashonhand[i+1]
@@ -51,4 +51,4 @@ def cashonhand():
 # print the days with cash deficit in the cash on hand list
 for i in cashonhand(): 
     # print the function and replace the negative sign in cash deficit amount by replacing it with a blank to execute it
-    print(i.replace("-","") 
+    print(i.replace("-",""))
