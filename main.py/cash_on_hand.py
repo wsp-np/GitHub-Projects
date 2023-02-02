@@ -36,9 +36,9 @@ def cashonhand():
     # loop through the function to calculate daily cash on hand using for loop
     # use i to indicate the index position of the values in the list 
     for i in range(len(accumulated_COH)):
-        # find the difference in cash on hand between the current and previous day
-        difference = accumulated_COH[i] - first_index
+        difference = accumulated_COH[i] - first_index # find difference in COH between the current and previous day
         final = difference - (difference * 2) # to remove "-" sign in overall output
+        
         # check if there is a difference in cash on hand 
         if difference < 0: 
             # evaluate and state that there is cash deficit when the difference in cash on hand calculated is negative
