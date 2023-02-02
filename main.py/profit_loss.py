@@ -37,13 +37,12 @@ def profitandloss():
     # use i to indicate the index position of the values in the list
     for i in range(len(accumulated_profits)):
         # find the difference in profits between the current and previous day
-        difference = accumulated_profits[i] - first_index
-        final = difference - (difference*2) # to remove "-" sign in output  
+        difference = accumulated_profits[i] - first_index  
         
         # evaluate if there is a difference in profits
         if difference < 0:
             # state that there is profit deficit when the difference in profits calculated is negative
-            deficit_days.append(f"[PROFIT DEFICIT] DAY: {list_of_days[i]}, AMOUNT: USD {round(final,1)}")
+            deficit_days.append(f"[PROFIT DEFICIT] DAY: {list_of_days[i]}, AMOUNT: USD {round(abs(difference),1)}")
             # set deficit to True for loop to stop looping
             deficit = True
         # update the previous day variable after looping
