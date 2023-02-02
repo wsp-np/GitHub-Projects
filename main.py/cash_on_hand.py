@@ -42,7 +42,7 @@ def cashonhand():
         # check if there is a difference in cash on hand 
         if difference < 0: 
             # evaluate and state that there is cash deficit when the difference in cash on hand calculated is negative
-            deficit_days.append(f"[CASH DEFICIT] DAY: {list_of_days[i]}, AMOUNT USD{round(final,1)})")
+            deficit_days.append(f"[CASH DEFICIT] DAY: {list_of_days[i]}, AMOUNT USD {round(final,1)}")
             # set deficit to True for loop to stop looping 
             deficit = True
         # update the previous day variable after looping
