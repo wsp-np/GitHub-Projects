@@ -12,15 +12,19 @@ def main():
     profit_loss.profitandloss
 main()
 
-#open text file and name it text_file
+#open text file and assign it to a variable: text_file
 text_file = open("Summary_report.txt", "w")
 
 # assign content1, content2, and content3 to each of the 3 functions 
-# use "\n" to form a new line and 
+# use "\n" to form a new line for each content and 
 # .join() to combine the list contents into a sentence
 content1 = "\n".join(cash_on_hand.cashonhand()) 
 content2 = "\n".join(profit_loss.profitandloss())
 content3 = overheads.overhead() #overhead does not need a new line
 
 #write the 3 created content into the text file
-text_file.write(f"{content1}, {content2}, {content3}")
+text_file.write(f"""
+{content1}, 
+{content2}, 
+{content3}
+""")
