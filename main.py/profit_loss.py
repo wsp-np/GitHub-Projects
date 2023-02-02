@@ -10,12 +10,12 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     next(reader)
 
     # append accumulated profit and days as a list back to each empty list
-    accumulated_profits = []
+    listofaccumulated_profits = []
     list_of_days = []
     
     # convert string to integer using int()
     for row in reader:
-        accumulated_profits.append(int(row[4]))
+        listofaccumulated_profits.append(int(row[4]))
         list_of_days.append(int(row[0]))
 
 # create a function to calculate the difference in profit 
@@ -25,7 +25,7 @@ def profitandloss():
     This function does not require any parameters.
     """
     # create a variable to store the first index in the extracted list
-    first_index = accumulated_profits[0]
+    first_index = listofaccumulated_profits[0]
     
     # set deficit to False
     deficit = False
@@ -35,9 +35,9 @@ def profitandloss():
     
     # use for loop to loop through and calculate the daily profits
     # use i to indicate the index position of the values in the list
-    for i in range(len(accumulated_profits)):
+    for i in range(len(listofaccumulated_profits)):
         # find the difference in profits between the current and previous day
-        difference = accumulated_profits[i] - first_index  
+        difference = listofaccumulated_profits[i] - first_index  
         
         # evaluate if there is a difference in profits
         if difference < 0:
@@ -46,7 +46,7 @@ def profitandloss():
             # set deficit to True for loop to stop looping
             deficit = True
         # update the previous day variable after looping
-        first_index = accumulated_profits[i]
+        first_index = listofaccumulated_profits[i]
         
     # evaluate if there is no deficit
     if deficit == False:
