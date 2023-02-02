@@ -38,7 +38,7 @@ def cashonhand():
     for i in range(len(accumulated_COH)):
         # find the difference in cash on hand between the current and previous day
         difference = accumulated_COH[i] - first_index
-        final = difference - (differencce * 2) # to remove "-" sign in overall output
+        final = difference - (difference * 2) # to remove "-" sign in overall output
         # check if there is a difference in cash on hand 
         if difference < 0: 
             # evaluate and state that there is cash deficit when the difference in cash on hand calculated is negative
