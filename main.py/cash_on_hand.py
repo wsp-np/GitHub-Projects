@@ -25,7 +25,7 @@ def cashonhand():
     This function does not require any parameters. 
     """
     # create a variable to store the first index of the first index in the extracted list
-    first_index = listofaccumulated_COH[0]
+    first_index = 0
     
     # set deficit to False 
     deficit = False
