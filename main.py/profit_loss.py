@@ -43,7 +43,7 @@ def profitandloss():
         # evaluate if there is a difference in profits
         if difference < 0:
             # state that there is profit deficit when the difference in profits calculated is negative
-            deficit_days.append(f"[PROFIT DEFICIT] DAY: {list_of_days[i]}, AMOUNT: USD{round(final,1)}")
+            deficit_days.append(f"[PROFIT DEFICIT] DAY: {list_of_days[i]}, AMOUNT: USD {round(final,1)}")
             # set deficit to True for loop to stop looping
             deficit = True
         # update the previous day variable after looping
