@@ -55,7 +55,6 @@ def cashonhand():
     # return the days that has cash deficit 
     return deficit_days 
                                
-# print the days with cash deficit in the cashonhand list using print()
+# print the days with cash deficit in the cashonhand list 
 for i in cashonhand(): 
-    # replace the - in cash deficit amount by replacing it with a blank
     print(i)
