@@ -46,7 +46,7 @@ def cashonhand():
             # set deficit to True for loop to stop looping 
             deficit = True
         # update the previous day variable after looping
-        first_index = accumulated_COH[i]
+        first_index = listofaccumulated_COH[i]
                                
     # evaluate if there is no deficit
     if deficit == False:
